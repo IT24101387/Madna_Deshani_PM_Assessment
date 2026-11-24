@@ -1,3 +1,5 @@
+## Day 02 - Resource Workload and Planning
+
 ##1. Objective
 The purpose of Day 2 is to prepare a task-level resource plan for the four software projects. The plan allocates six developers (DEV-1 to DEV-6) and two QA engineers (QA-1 and QA-2), each available for up to 8 hours per working day.
 The plan identifies resource ownership, weekly capacity, project dependencies, priority order, and possible bottlenecks.
@@ -14,86 +16,84 @@ The assessment provides project completion percentages and key concerns, but it 
 
 ##3. Weekly Capacity Calculation
 Formula: Weekly capacity = Number of resources × 8 hours per day × 5 working days
-Resource group	Number of people	Hours per person per week	Total weekly capacity
-Developers	6	40	240 hours
-QA Engineers	2	40	80 hours
-Total	8	40	320 hours
+
+Resource group	Number of people	 Hours per person per week	 Total weekly capacity
+Developers	            6	                  40                    	240 hours
+QA Engineers	          2	                  40	                      80 hours
+Total	                  8	                  40	                    320 hours
 
 
 Daily portfolio capacity is 48 developer hours (6 × 8) and 16 QA hours (2 × 8), giving 64 combined resource hours per working day.
 
 ##4. Resource Allocation Matrix
 4.1 Developer allocation
-Resource	Restaurant POS	E-Commerce	Employee Management	Taxi Booking	Weekly total
-DEV-1	16	0	0	24	40
-DEV-2	0	16	0	24	40
-DEV-3	0	24	16	0	40
-DEV-4	24	0	0	16	40
-DEV-5	0	16	24	0	40
-DEV-6	20	0	20	0	40
-Project total	60	56	60	64	240
+
+Resource	  Restaurant POS	E-Commerce	Employee Management	Taxi Booking	Weekly total
+DEV-1	            16	          0	              0	             24	              40
+DEV-2	             0	         16	              0	             24	              40
+DEV-3	             0	         24	              16	           0	              40
+DEV-4	            24	          0	              0	             16	              40
+DEV-5	             0	         16	              24	           0	              40
+DEV-6	            20	          0	              20	           0	              40
+Project total    	60	         56	              60	           64	             240
 
 
 4.2 QA allocation
 Resource	Restaurant POS	E-Commerce	Employee Management	Taxi Booking	Weekly total
-QA-1	30	0	0	10	40
-QA-2	0	20	20	0	40
-Project total	30	20	20	10	80
+QA-1	          30	          0	              0	              10	            40
+QA-2	           0	         20	              20	             0	            40
+Project total	  30	         20	              20	            10	            80
 
 
 4.3 Project-level allocation summary
-Project	Developer hours	QA hours	Combined hours
-Restaurant POS System	60	30	90
-E-Commerce Platform	56	20	76
-Employee Management System	60	20	80
-Taxi Booking Website	64	10	74
-Total	240	80	320
+Project	                  Developer hours	 QA hours	 Combined hours
+Restaurant POS System	        60	           30	            90
+E-Commerce Platform	          56	           20	            76
+Employee Management System	  60	           20	            80
+Taxi Booking Website	        64	           10	            74
+Total	                       240	           80	           320
 
 
 The Taxi Booking Website receives the largest developer allocation because it is at 30% completion and is identified as high delivery risk. Restaurant POS receives 30 QA hours because QA and integration are pending. E-Commerce and Employee Management receive development and QA support for their identified dependencies and clarification needs.
 
 ##5. Task Ownership and Priority Matrix
-Priority	Project	Proposed task	Primary owner	Supporting resource
-P1 – Critical	Taxi Booking	Review remaining scope, identify critical-path tasks, and implement the highest-priority development work	DEV-1	DEV-2, DEV-4
-P1 – High	Restaurant POS	Complete integration preparation and resolve integration issues	DEV-4	DEV-1, DEV-6
-P1 – High	Restaurant POS	Prepare and execute QA test activities; report defects	QA-1	DEV-4
-P2 – High	E-Commerce	Confirm backend/API readiness and resolve frontend/backend integration dependencies	DEV-3	DEV-2, DEV-5
-P2 – High	Employee Management	Clarify acceptance criteria with stakeholders and map them to outstanding tasks	DEV-5	DEV-3, DEV-6
-P2 – Medium	E-Commerce	Test integrated frontend/backend flows and record defects	QA-2	DEV-3
-P2 – Medium	Employee Management	Prepare and execute tests against agreed acceptance criteria	QA-2	DEV-5
-P3 – Medium	Taxi Booking	Validate completed priority functions and report test findings	QA-1	DEV-1
+Priority	        Project	          Proposed task                                                                                              	Primary owner	  Supporting resource
+P1 – Critical	  Taxi Booking	      Review remaining scope, identify critical-path tasks, and implement the highest-priority development work	      DEV-1          DEV-2, DEV-4
+P1 – High	      Restaurant POS	    Complete integration preparation and resolve integration issues	                                                DEV-4	         DEV-1, DEV-6
+P1 – High	      Restaurant POS	    Prepare and execute QA test activities; report defects	                                                        QA-1	         DEV-4
+P2 – High	      E-Commerce	        Confirm backend/API readiness and resolve frontend/backend integration dependencies	                            DEV-3	         DEV-2, DEV-5
+P2 – High  	    Employee Management	Clarify acceptance criteria with stakeholders and map them to outstanding tasks	                                DEV-5	         DEV-3, DEV-6
+P2 – Medium	    E-Commerce	        Test integrated frontend/backend flows and record defects                                                       QA-2	         DEV-3
+P2 – Medium	    Employee Management	Prepare and execute tests against agreed acceptance criteria	                                                  QA-2	         DEV-5
+P3 – Medium	    Taxi Booking	      Validate completed priority functions and report test findings	                                                QA-1	         DEV-1
 
 
 Priority rationale: Taxi Booking is the highest schedule-risk project. Restaurant POS has pending QA and integration. E-Commerce has a frontend/backend dependency. Employee Management needs agreed acceptance criteria before completion can be reliably validated.
 
 ##6. Dependency List
-ID	Project	Dependency	Depends on	Owner / action
-DEP-01	Restaurant POS	Integration testing depends on the required components being integrated and available in a test environment.	Development integration completion	DEV-4 coordinates; QA-1 tests
-DEP-02	Restaurant POS	Final QA sign-off depends on test execution and critical defects being resolved and retested.	Build availability and defect fixes	QA-1 coordinates with development
-DEP-03	E-Commerce	Frontend integration depends on backend APIs/services being available and their interfaces being confirmed.	Backend/API readiness	DEV-3 coordinates; DEV-2 and DEV-5 support
-DEP-04	Employee Management	Acceptance testing depends on clear, agreed acceptance criteria.	Client/stakeholder clarification	DEV-5 coordinates clarification
-DEP-05	Employee Management	QA validation depends on approved criteria and a testable build.	DEP-04 and development completion	QA-2
-DEP-06	Taxi Booking	Reliable delivery planning depends on confirming the remaining scope, task estimates, blockers, and critical path.	Project Manager and development review	DEV-1 coordinates with DEV-2 and DEV-4
+ID	    Project	            Dependency	                                                                                                                Depends on	                             Owner / action
+DEP-01	Restaurant POS	    Integration testing depends on the required components being integrated and available in a test environment.	              Development integration completion	     DEV-4 coordinates; QA-1 tests
+DEP-02	Restaurant POS	    Final QA sign-off depends on test execution and critical defects being resolved and retested.	                              Build availability and defect fixes	     QA-1 coordinates with development
+DEP-03	E-Commerce	        Frontend integration depends on backend APIs/services being available and their interfaces being confirmed.	                Backend/API readiness	DEV-3 coordinates  DEV-2 and DEV-5 support
+DEP-04	Employee Management	Acceptance testing depends on clear, agreed acceptance criteria.	                                                          Client/stakeholder clarification	       DEV-5 coordinates clarification
+DEP-05	Employee Management	QA validation depends on approved criteria and a testable build.	                                                          DEP-04 and development completion	       QA-2
+DEP-06	Taxi Booking	      Reliable delivery planning depends on confirming the remaining scope, task estimates, blockers, and critical path.	        Project Manager and development review	DEV-1 coordinates with DEV-2 and DEV-4
 
 
-7. Bottlenecks and Mitigation
-Potential bottleneck	Impact	Proposed mitigation
-QA capacity is limited to 80 hours per week across four projects.	Testing queues may delay feedback and sign-off.	Prioritize risk-based testing; agree test windows and entry criteria with each project.
-Restaurant POS needs integration and QA attention.	Late integration defects may affect release readiness.	Confirm build readiness early and reserve QA-1 capacity for planned test and retest work.
-E-Commerce frontend/backend dependency.	Frontend work may be blocked by unavailable or changing APIs.	Confirm API contracts and use agreed mocks/stubs only where suitable and approved by the technical lead.
-Employee Management acceptance criteria are unclear.	Rework and disputes about completion may occur.	Obtain written stakeholder agreement before final acceptance testing.
-Taxi Booking has high delivery risk and only 30% reported completion.	Original deadline may be unrealistic.	Review critical path and scope, provide evidence-based options, and escalate schedule risks early.
-Multiple project assignments may create context switching.	Lost focus and slower task completion.	Group work into planned blocks and confirm priorities in a short daily coordination meeting.
+## 7. Bottlenecks and Mitigation
+Potential bottleneck	                                                 Impact	                                                        Proposed mitigation
+QA capacity is limited to 80 hours per week across four projects.     Testing queues may delay feedback and sign-off.	                Prioritize risk-based testing; agree test windows and entry criteria with each project.
+Restaurant POS needs integration and QA attention.	                  Late integration defects may affect release readiness.	        Confirm build readiness early and reserve QA-1 capacity for planned test and retest work.
+E-Commerce frontend/backend dependency.	                              Frontend work may be blocked by unavailable or changing APIs.	  Confirm API contracts and use agreed mocks/stubs only where suitable and approved by the technical lead.
+Employee Management acceptance criteria are unclear.	                Rework and disputes about completion may occur.	                Obtain written stakeholder agreement before final acceptance testing.
+Taxi Booking has high delivery risk and only 30% reported completion.	Original deadline may be unrealistic.	                          Review critical path and scope, provide evidence-based options, and escalate schedule risks early.
+Multiple project assignments may create context switching.	          Lost focus and slower task completion.	                        Group work into planned blocks and confirm priorities in a short daily coordination meeting.
 
 
-8. Capacity Check
+## 8. Capacity Check
 - Each developer is allocated 40 hours for the week, equal to the stated maximum capacity.
 - Each QA engineer is allocated 40 hours for the week, equal to the stated maximum capacity.
 - Total developer allocation: 240 / 240 hours.
 - Total QA allocation: 80 / 80 hours.
 - Total planned allocation: 320 / 320 hours.
 Capacity warning: This is a maximum-capacity planning model with no buffer. Before approval, the Project Manager should confirm leave, meetings, support duties, actual skills, and availability. If any non-project time is required, reduce task allocations and re-prioritize rather than exceeding capacity.
-9. Day 2 Conclusion
-The proposed plan allocates all six developers and two QA engineers within the stated weekly capacity. It gives priority to Taxi Booking due to its high delivery risk, while reserving QA effort for Restaurant POS integration and testing. It also addresses the E-Commerce technical dependency and Employee Management acceptance-criteria gap.
-
-The allocations are planning assumptions and must be validated with the Project Manager, development team, QA team, and relevant stakeholders. The next step is to use confirmed task estimates and milestone dates to build the master delivery tracker and milestone schedule on Day 3.

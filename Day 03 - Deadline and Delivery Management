@@ -1,1 +1,91 @@
+## Day 03 - Deadline and Delivery Management
 
+##1. Objective
+Day 3 establishes a master delivery tracking process for the four software projects. It records current completion, estimated remaining effort, milestone sequence, dependencies, delivery risks, recovery actions, and escalation thresholds.
+The assessment does not provide confirmed start dates, milestone dates, task-level estimates, or contractual deadlines. All effort estimates and relative target windows below are planning assumptions, not confirmed commitments.
+
+##2. Portfolio Snapshot
+Project	Completion	Remaining	Initial status	Main concern
+Restaurant POS System	65%	35%	Amber	QA and integration pending
+E-Commerce Platform	40%	60%	Amber	Frontend/backend dependency
+Employee Management System	75%	25%	Amber	Acceptance criteria unclear
+Taxi Booking Website	30%	70%	Red	High delivery risk
+
+
+##3. Master Delivery Tracker
+Project	Workstream / next action	Owner	Estimated remaining effort*	Dependency	Status
+Restaurant POS	Complete integration and resolve issues	DEV-4	48 developer hours	Integrated components and test environment	Amber
+Restaurant POS	QA, defect triage and retesting	QA-1	32 QA hours	Testable integrated build	Amber
+E-Commerce	Confirm backend/API readiness and integration	DEV-3	72 developer hours	API availability and confirmed interfaces	Amber
+E-Commerce	Validate integrated user journeys	QA-2	24 QA hours	Integrated test build	Amber
+Employee Management	Confirm acceptance criteria and remaining functions	DEV-5	56 developer hours	Written stakeholder agreement	Amber
+Employee Management	Acceptance-based testing	QA-2	20 QA hours	Approved criteria and testable build	Amber
+Taxi Booking	Confirm critical path and priority development scope	DEV-1	112 developer hours	Scope and task estimate review	Red
+Taxi Booking	Test priority functions and retest fixes	QA-1	24 QA hours	Testable priority build	Red
+
+
+*Effort figures are illustrative planning estimates. They must be checked with technical owners and are not calculated directly from completion percentages.
+
+##4. Milestone Schedule
+Project	Milestone	Exit condition	Proposed sequence
+Restaurant POS	Integration build ready	Components integrated and deployed to test environment	Week 1
+Restaurant POS	QA and critical defect retest complete	No open critical defects; agreed release criteria met	Week 1–2
+E-Commerce	Backend/API readiness confirmed	API contract and required endpoints available	Week 1
+E-Commerce	Frontend/backend integration complete	Priority user journeys work in integrated environment	Week 2
+Employee Management	Acceptance criteria approved	Client/stakeholders confirm measurable criteria	Week 1
+Employee Management	Acceptance testing complete	Agreed acceptance tests executed and recorded	Week 2
+Taxi Booking	Scope and critical path agreed	Prioritized scope, owners, blockers and estimates confirmed	Immediate / Week 1
+Taxi Booking	Priority build and QA review	Priority functions demonstrated; high-severity defects reviewed	Week 2 onward
+
+
+These are relative planning windows, not confirmed calendar dates. Confirm the schedule after estimates, dependencies, resource availability and client commitments are validated.
+
+##5. Remaining Effort Estimation Approach
+Use task-level estimation rather than converting remaining percentage directly into days.
+
+Formula: Estimated remaining effort = Sum of estimated hours for all incomplete tasks
+
+For each task, record its deliverable, development or QA hours, owner, dependency, estimate confidence (High / Medium / Low), actual hours and updated remaining estimate. Initial figures in the tracker are provisional and must be confirmed by technical owners.
+
+##6. Critical Dependencies
+ID	Project	Dependency	Impact if delayed	Owner / response
+DEP-01	Restaurant POS	Integration must finish before full integration QA.	QA start and release validation may slip.	DEV-4 confirms build readiness with QA-1.
+DEP-02	Restaurant POS	Critical defects must be fixed and retested before release.	Release quality and sign-off may be blocked.	QA-1 coordinates triage and retest.
+DEP-03	E-Commerce	Backend APIs and interfaces must be available for frontend integration.	Integration and end-to-end testing may be blocked.	DEV-3 confirms API readiness.
+DEP-04	Employee Management	Acceptance criteria must be agreed before acceptance testing.	Rework or disagreement about completion may occur.	DEV-5 obtains written confirmation.
+DEP-05	Taxi Booking	Remaining scope, critical path and estimates must be confirmed.	Recovery options and forecast remain unreliable.	Project Manager and DEV-1 review immediately.
+
+
+##7. Deadline Recovery Plan
+Project	Recovery action	Trade-off / decision
+Taxi Booking	Review critical path, prioritize minimum agreed release scope, remove blockers, and provide phased delivery options.	Defer lower-priority features only with client approval; do not reduce quality controls.
+Restaurant POS	Complete integration readiness review, reserve QA windows, triage defects by severity, and retest fixes.	Release date may need adjustment if critical defects remain open.
+E-Commerce	Confirm API contract and backend readiness; agree interface changes before integration.	Use approved mocks only to unblock parallel work; final integration requires real services.
+Employee Management	Hold client clarification and obtain written acceptance criteria.	Do not treat unclear requirements as accepted scope.
+
+
+##8. Escalation Thresholds
+Trigger	Escalation level	Required response
+Task forecast to miss agreed date by 1 working day	Project Lead	Confirm blocker, owner and recovery action.
+Milestone forecast to slip by more than 2 working days	Project Manager	Review impact, re-sequence work and notify stakeholders.
+Critical-path task blocked for more than 1 working day	Immediate Project Manager escalation	Assign decision owner and unblock or approve recovery option.
+Resource allocation exceeds 40 hours per person per week	Project Manager / Resource Lead	Rebalance scope or resources; do not approve over-capacity allocation.
+Critical defect remains open near release	QA Lead and Project Manager	Hold release decision until agreed release criteria are met.
+Client requests work outside agreed scope	Project Manager / Change Control	Log change request and assess scope, time, cost and capacity.
+Taxi Booking recovery cannot protect agreed date	Management escalation	Present phased scope, revised date, or additional approved capacity options.
+
+
+Thresholds are proposed controls for this assessment and should be aligned with company policy and client agreements.
+9. Weekly Monitoring Routine
+1. Update task status, completion, actual hours, and remaining estimate.
+2. Confirm blockers and dependency owners.
+3. Review upcoming milestones and forecast variance.
+4. Check individual resource allocations against weekly capacity.
+5. Review risks, issues, change requests and decisions.
+6. Publish concise client updates for material changes.
+7. Escalate according to the agreed thresholds.
+
+##10. Day 3 Conclusion
+The Day 3 plan provides a single view of project progress, remaining effort, milestone sequence, dependencies, recovery actions, and escalation rules. Taxi Booking remains the highest-risk project and requires immediate scope and critical-path review. Restaurant POS needs coordinated integration and QA; E-Commerce needs backend/API readiness; and Employee Management needs approved acceptance criteria.
+
+The proposed estimates and relative schedule windows must be validated before they are treated as a delivery baseline. The next step is to apply the Day 4 incident scenarios, update the tracker, and record the impact of each decision.

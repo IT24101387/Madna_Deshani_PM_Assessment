@@ -1,1 +1,97 @@
+##Day 04 - Crisis Management Simulation
+##Objective
+Respond to the four incidents in the assessment: (1) DEV-3 unavailable for two working days, affecting two tasks; (2) a client requests a reporting feature after scope agreement; (3) QA finds 12 Restaurant POS defects, including 3 critical; and (4) Taxi Booking client insists on the original date despite 30% completion.
+Assumptions
+- The assessment provides six developers and two QA engineers, each available up to 8 hours per working day (40 hours per five-day week).
+- The exact two DEV-3 tasks are not named in the incident statement. For planning, assume E-Commerce backend/API readiness and E-Commerce integration support. Verify against the Day 2 task ownership matrix before assigning cover.
+- The reporting feature's requesting client/project is not identified. Log it as CR-01 with project/client to be confirmed.
+- No original calendar due date, detailed task estimates, defect fix estimates, or defect breakdown beyond the 3 critical defects is supplied.
+- CR-01 sizing of 24–40 developer hours plus 8–12 QA hours is a provisional estimate range only.
+- Do not invent confirmed dates or forecasts. Confirm all owners' skills and available capacity before reallocating work.
 
+##Incident 1 – DEV-3 unavailable for two working days
+Affected tasks (provisional): E-Commerce backend/API readiness and interface confirmation; E-Commerce integration support.
+
+Impact	  Assessment
+Scope	    No scope reduction proposed.
+Time	    Up to 16 DEV-3 hours unavailable over two working days; E-Commerce milestones may move.
+Quality	  Transfer without handover may create interface errors; require peer review and test evidence.
+Capacity	Proposed cover must fit within receiving developers' remaining capacity.
+
+
+Mitigation: Obtain a handover covering branch/status, API contract, blockers and next steps. Proposed cover: DEV-2 for backend/API readiness and DEV-4 for integration support, subject to skill and capacity checks. QA-2 may prepare tests that do not depend on the API. If capacity is insufficient, defer lower-priority non-critical work with PM approval. Reforecast the milestone after estimates are confirmed.
+
+Decision: PM approves named cover and resequencing. Recipients: E-Commerce team, PM, Technical Lead; client if a committed milestone/date is affected.
+
+##Incident 2 – New reporting feature after scope agreement
+Change ID: CR-01 (project/client to be confirmed).
+
+Impact	          Assessment
+Scope	            Adds requirements clarification, design, development, testing and documentation.
+Time	            Provisional 24–40 developer hours + 8–12 QA hours; technical estimate required.
+Quality	          New acceptance criteria and regression testing required.
+Capacity	        32–52 person-hours provisionally; capacity review required.
+Owner	            PM coordinates; Technical Lead and QA Lead estimate.
+Recommendation	  Defer to next release unless client confirms it is essential and approves the impact.
+
+
+Do not silently add work to agreed scope. Clarify requirements, estimate cost/time/capacity, and obtain written client and internal approval before starting.
+
+##Incident 3 – Restaurant POS: 12 defects, including 3 critical
+Release rule: Do not release while any critical defect remains open.
+
+Triage: Log all 12 defects with unique IDs, reproduction steps, expected/actual result, environment, evidence, severity and owner. Treat the 3 critical defects as release blockers. Triage the other 9 by business impact and workaround availability. Check for common root causes.
+
+Release criteria:
+1. All 3 critical defects fixed, independently retested and closed by QA.
+2. No open defect causing data loss, security exposure, transaction failure or major business-flow outage.
+3. Agreed critical POS user journeys pass regression testing.
+4. High-severity defects are fixed or have a documented workaround and explicit approval to defer.
+5. QA evidence, known-issues list and release approval are recorded.
+6. Residual medium/low defects have owners, target dates and accepted disposition.
+Retest: Developer records fix and build/version; QA repeats reproduction steps, runs focused regression and smoke tests, reopens failures, and records evidence. QA Lead recommends release only when criteria are met; PM records go/no-go. QA-1 proposed as triage coordinator; QA-2 supports regression if available.
+
+##Incident 4 – Taxi Booking client insists on original date
+Evidence: Taxi Booking is 30% complete against a planned 10-working-day duration and is flagged high delivery risk. The assessment does not give elapsed days, original calendar due date, remaining task estimates or minimum acceptable scope. The original date cannot responsibly be guaranteed from available evidence.
+
+Options to present:
+1. Keep original date with a smaller, client-approved phased first release; move remaining features to a later release.
+2. Keep full agreed scope and confirm a revised date only after technical owners estimate remaining work.
+3. Assess additional qualified capacity, subject to availability, approval and onboarding/quality risk.
+Do not skip QA. PM, DEV-1 and QA Lead validate the critical path. Client product owner selects scope/date option; management approves extra capacity. Recipients: Taxi Booking client, management, Technical Lead and QA Lead.
+
+##Issue Register
+
+ID	    Issue	                                                Severity	               Owner	Action
+ISS-01	DEV-3 absent two working days	                        High	                    PM	  Confirm affected tasks, handover and cover
+ISS-02	Reporting feature request after scope agreement	      Medium pending review	    PM	  Clarify and estimate CR-01
+ISS-03	12 POS defects, 3 critical	                          Critical	                QA    Lead / dev owners	Fix and retest critical defects before release
+ISS-04	Taxi client demands original date at 30% completion	  High	                    PM	  Validate critical path and present options
+
+
+##Risk Register
+ID	    Risk	                                              Probability/Impact	  Mitigation	                                            Owner
+RSK-01	E-Commerce integration slips due to DEV-3 absence	  High/High	            Qualified cover, handover, reforecast	                  PM
+RSK-02	Uncontrolled scope growth from reporting feature	  Medium/High	          Change control and written approval	                    PM
+RSK-03	POS release failure if critical defects remain	    High/Critical        	Release blocker, independent retest, regression	        QA Lead
+RSK-04	Taxi Booking date commitment becomes unachievable	  High/High            	Critical-path review, phased options, client decision	  PM
+
+
+##Change Log
+ID	    Description                                                Type	              Impact	                                            Approval
+CHG-01	Reassign two DEV-3 tasks during absence	                   Resource/schedule	Reforecast E-Commerce milestone	                    Pending PM
+CR-01	  Add reporting feature	                                     Scope request	    24–40 dev hrs + 8–12 QA hrs provisional	            Pending client/internal
+CHG-02	Require closure of critical defects before POS release	   Quality gate      	May affect release date	                            Proposed
+CHG-03	Agree Taxi Booking scope/date option	                     Scope/schedule	    Depends on client choice and validated estimates	  Pending client
+
+
+##Internal Escalation Message
+To: Project Manager, Technical Lead, QA Lead
+Subject: Day 4 escalation – resource absence, POS critical defects and Taxi Booking risk
+
+DEV-3 is unavailable for two working days and two tasks need confirmed cover. Proposed DEV-2/DEV-4 reassignment is subject to skill and capacity checks. Restaurant POS has 12 defects, including 3 critical, hold release until all critical defects are fixed and independently retested. Log the reporting feature as CR-01 and estimate it before approval. Taxi Booking is 30% complete against a 10-working-day plan, do not guarantee the original date without a critical-path review.
+
+Decisions requested: approve cover and resequencing, confirm defect owners and release gate, assign CR-01 estimator, authorize Taxi Booking client-options discussion. Record decision owners and due dates.
+
+Conclusion
+Day 4 demonstrates controlled responses to resource disruption, scope change, quality defects and deadline pressure. Validate capacity before reallocating work, use formal change control, block release for critical defects, and communicate delivery options supported by evidence. All proposed estimates and owner assignments remain provisional until confirmed.

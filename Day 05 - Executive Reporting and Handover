@@ -1,0 +1,34 @@
+## Day 05 - Executive Reporing and Handover
+
+## Portfolio baseline
+Project	                            Completion	  Status
+Restaurant POS System	                  65%	      Red
+E-Commerce Platform	                    40%	      Amber
+Employee Management System	            75%	      Amber
+Taxi Booking Website	                  30%	      Red
+
+
+## Assumptions and limitations
+- Percentages come from the assessment baseline; no verified Day 5 progress update was supplied.
+- No confirmed calendar milestones, elapsed days, contractual due dates or task-level actuals were provided.
+- Day 3 effort estimates are illustrative and must be validated by technical owners.
+- Maximum weekly capacity is 240 developer hours and 80 QA hours, with no buffer.
+- CR-01 estimate remains provisional: 24–40 developer hours plus 8–12 QA hours.
+- Taxi Booking's original date cannot be guaranteed from the supplied information.
+- Meeting minutes are proposed notes, not a record of an actual meeting.
+
+## RAG rules
+- Green: within approved baseline, dependencies controlled, no critical issue.
+- Amber: at risk; recovery action or stakeholder decision required.
+- Red: critical blocker exists or delivery date is not supportable.
+
+## Weekly update process
+1. Update task status, completion, actual hours and remaining estimate.
+2. Confirm blockers, dependencies and milestone forecasts.
+3. Check resource allocations against weekly capacity.
+4. Update issue, risk, change and decision logs.
+5. Refresh the dashboard and review management actions.
+6. Send client updates for material approved changes.
+
+## Controls
+Do not release Restaurant POS while any critical defect remains open. Do not add CR-01 to agreed scope without written approval. Do not promise Taxi Booking's original date without validated estimates, critical path, QA effort and client agreement.
